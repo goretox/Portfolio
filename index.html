@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facundo Verdugo | Observability & Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --border: #1f293d;
+      --border-accent: #2d3b55;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-green: #10b981;
+      --accent-cyan: #06b6d4;
+      --accent-amber: #f59e0b;
+      --code-font: 'JetBrains Mono', monospace;
+      --heading-font: 'Space Grotesk', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--code-font);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header Nav Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-bottom: 4rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-green);
+      padding: 0.35rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin-bottom: 2rem;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: 1.5rem;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title span {
+      color: var(--accent-green);
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 6px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-family: var(--heading-font);
+      color: var(--accent-cyan);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+    }
+
+    /* Metric / Stat Cards */
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Code Links */
+    .repo-link {
+      display: inline-block;
+      color: var(--accent-green);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .repo-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header, footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">FV // OBSERVABILITY & CLOUD</div>
+    <nav>
+      <a href="#especialidad">ESPECIALIDAD</a>
+      <a href="#laboratorios">LABS & PROYECTOS</a>
+      <a href="#herramientas">STACK</a>
+      <a href="https://www.linkedin.com/in/facundo-verdugo" target="_blank">LINKEDIN</a>
+      <a href="https://github.com/goretox" target="_blank">GITHUB</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="status-badge">
+      <div class="pulse"></div>
+      Disponible para roles en Infraestructura, Cloud & Observabilidad
+    </div>
+    <h1>Construyendo visibilidad y observabilidad en sistemas distribuidos.</h1>
+    <p class="hero-subtitle">
+      Especializado en la instrumentación de telemetría distribuida, procesamiento de registros y monitoreo de microservicios mediante <strong>OpenTelemetry</strong>, <strong>Elasticsearch</strong> y contenedores <strong>Docker</strong>.
+    </p>
+  </div>
+
+  <!-- Métricas / Áreas clave -->
+  <section id="especialidad">
+    <div class="section-title"><span>01 //</span> ÁREAS DE ENFOQUE</div>
+    <div class="grid-3">
+      <div class="stat-card">
+        <div class="stat-number">OTLP</div>
+        <div class="stat-label">Estándar OpenTelemetry (gRPC / HTTP)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">TraceContext</div>
+        <div class="stat-label">Propagación W3C (traceparent)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Elastic</div>
+        <div class="stat-label">Ingesta & Indexación de Logs / Traces</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laboratorios / Proyectos -->
+  <section id="laboratorios">
+    <div class="section-title"><span>02 //</span> LABORATORIOS TÉCNICOS EN GITHUB</div>
+    <div class="grid-2">
+
+      <div class="card">
+        <h3>01. OpenTelemetry Collector & Architecture</h3>
+        <p>Configuración de pipeline OTLP completo para recibir telemetría (Spans, Logs, Métricas), filtrarla y exportarla hacia backends como Elasticsearch y Jaeger usando Docker Compose.</p>
+        <ul class="tag-list">
+          <li class="tag">OpenTelemetry Collector</li>
+          <li class="tag">Docker Compose</li>
+          <li class="tag">YAML</li>
+          <li class="tag">OTLP/gRPC</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+      <div class="card">
+        <h3>02. Distributed Tracing en Node.js (Express)</h3>
+        <p>Instrumentación manual y automática de API REST Node.js usando OpenTelemetry SDK, creación de spans customizados, atributos de contexto e integración con colector.</p>
+        <ul class="tag-list">
+          <li class="tag">Node.js</li>
+          <li class="tag">Express</li>
+          <li class="tag">OTel Node SDK</li>
+          <li class="tag">JavaScript</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+      <div class="card">
+        <h3>03. Microservicios & Context Propagation (Python)</h3>
+        <p>Implementación de propagación de contexto distribuido W3C (`traceparent`) entre servicios desarrollados en FastAPI/Python para mantener la trazabilidad de punta a punta.</p>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">FastAPI</li>
+          <li class="tag">Context Propagation</li>
+          <li class="tag">OpenTelemetry</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+      <div class="card">
+        <h3>04. CI/CD & Infrastructure Automation</h3>
+        <p>Automatización de flujos de trabajo en GitHub Actions para validación continua de contenedores Docker, pruebas de sintaxis y despliegue automatizado.</p>
+        <ul class="tag-list">
+          <li class="tag">GitHub Actions</li>
+          <li class="tag">CI/CD</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Bash</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stack de Herramientas -->
+  <section id="herramientas">
+    <div class="section-title"><span>03 //</span> HERRAMIENTAS Y TECNOLOGÍAS</div>
+    <div class="card">
+      <ul class="tag-list" style="gap: 0.75rem;">
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">OpenTelemetry</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Elasticsearch</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Docker / Containerization</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Node.js & Express</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Python & FastAPI</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Git / GitHub Actions</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Distributed Tracing</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">SQL / Bases de Datos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; Facundo Verdugo — Mendoza, Argentina</div>
+    <div>
+      <a href="https://www.linkedin.com/in/facundo-verdugo" target="_blank">LinkedIn</a> // 
+      <a href="https://github.com/goretox" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
