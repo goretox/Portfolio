@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -113,7 +114,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .hero-subtitle {
       font-size: 1.125rem;
       color: var(--text-muted);
@@ -237,7 +237,6 @@
     .repo-link:hover {
       text-decoration: underline;
     }
-
     /* Estilos Estructurados de la Sección de Contacto */
     .contact-grid {
       display: grid;
@@ -306,4 +305,170 @@
       }
     }
   </style>
-</
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">FV // OBSERVABILITY & CLOUD</div>
+    <nav>
+      <a href="#especialidad">ESPECIALIDAD</a>
+      <a href="#laboratorios">LABS & PROYECTOS</a>
+      <a href="#herramientas">STACK</a>
+      <a href="#contacto">CONTACTO</a>
+      <a href="https://www.linkedin.com/in/facundo-verdugo-378076216/" target="_blank">LINKEDIN</a>
+      <a href="https://github.com/goretox" target="_blank">GITHUB</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="status-badge">
+      <div class="pulse"></div>
+      Disponible para roles en Infraestructura, Cloud & Observabilidad | Inglés: B1 / B2
+    </div>
+    <h1>Construyendo visibilidad y observabilidad en sistemas distribuidos.</h1>
+    <p class="hero-subtitle">
+      Especializado en la instrumentación de telemetría distribuida, procesamiento de registros y monitoreo de microservicios mediante <strong>OpenTelemetry</strong>, <strong>Elasticsearch</strong> y contenedores <strong>Docker</strong>.
+    </p>
+  </div>
+  <!-- Métricas / Áreas clave -->
+  <section id="especialidad">
+    <div class="section-title"><span>01 //</span> ÁREAS DE ENFOQUE</div>
+    <div class="grid-3">
+      <div class="stat-card">
+        <div class="stat-number">OTLP</div>
+        <div class="stat-label">Estándar OpenTelemetry (gRPC / HTTP)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">TraceContext</div>
+        <div class="stat-label">Propagación W3C (traceparent)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Elastic</div>
+        <div class="stat-label">Ingesta & Indexación de Logs / Traces</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laboratorios / Proyectos -->
+  <section id="laboratorios">
+    <div class="section-title"><span>02 //</span> LABORATORIOS TÉCNICOS EN GITHUB</div>
+    <div class="grid-2">
+
+      <!-- Proyecto 01 -->
+      <div class="card">
+        <h3>01. OpenTelemetry Collector & Architecture</h3>
+        <p>Configuración de pipeline OTLP completo para recibir telemetría (Spans, Logs, Métricas), filtrarla y exportarla hacia backends como Elasticsearch y Jaeger usando Docker Compose.</p>
+        <ul class="tag-list">
+          <li class="tag">OpenTelemetry Collector</li>
+          <li class="tag">Docker Compose</li>
+          <li class="tag">YAML</li>
+          <li class="tag">OTLP/gRPC</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+      <!-- Proyecto 02 -->
+      <div class="card">
+        <h3>02. Distributed Tracing en Node.js (Express)</h3>
+        <p>Instrumentación manual y automática de API REST Node.js usando OpenTelemetry SDK, creación de spans customizados, atributos de contexto e integración con colector.</p>
+        <ul class="tag-list">
+          <li class="tag">Node.js</li>
+          <li class="tag">Express</li>
+          <li class="tag">OTel Node SDK</li>
+          <li class="tag">JavaScript</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+      <!-- Proyecto 03 CON DATOS REALES DEL README Y REPO -->
+      <div class="card">
+        <h3>03. otel-lab-python</h3>
+        <p>Microservicio en Python (FastAPI) enfocado en la propagación de contexto W3C (<code>traceparent</code>) entre servicios distribuidos.</p>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">FastAPI</li>
+          <li class="tag">W3C Traceparent</li>
+          <li class="tag">OpenTelemetry</li>
+        </ul>
+        <a href="https://github.com/goretox/otel-lab-python" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+      <!-- Proyecto 04 -->
+      <div class="card">
+        <h3>04. CI/CD & Infrastructure Automation</h3>
+        <p>Automatización de flujos de trabajo en GitHub Actions para validación continua de contenedores Docker, pruebas de sintaxis y despliegue automatizado.</p>
+        <ul class="tag-list">
+          <li class="tag">GitHub Actions</li>
+          <li class="tag">CI/CD</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Bash</li>
+        </ul>
+        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stack de Herramientas -->
+  <section id="herramientas">
+    <div class="section-title"><span>03 //</span> HERRAMIENTAS, TECNOLOGÍAS E IDIOMAS</div>
+    <div class="card">
+      <ul class="tag-list" style="gap: 0.75rem;">
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">OpenTelemetry</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Elasticsearch</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Docker / Containerization</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Linux Admin & Networking</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Node.js & Express</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Python & FastAPI</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Git / GitHub Actions</li>
+        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Distributed Tracing</li>
+        <li class="tag tag-highlight" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Inglés: B1 / B2 (Intermedio)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto Totalmente Estructurada -->
+  <section id="contacto">
+    <div class="section-title"><span>04 //</span> INFORMACIÓN DE CONTACTO Y POSTULACIÓN</div>
+    <div class="card">
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Canales directos de contacto para coordinar entrevistas, postulaciones a roles Cloud/DevOps o proyectos de observabilidad:
+      </p>
+      
+      <div class="contact-grid">
+        <a href="mailto:facuverdugo@gmail.com" class="contact-box">
+          <span class="contact-title">EMAIL DE CONTACTO</span>
+          <span class="contact-value">facuverdugo@gmail.com</span>
+        </a>
+
+        <a href="https://wa.me/542617165001" target="_blank" class="contact-box">
+          <span class="contact-title">TELÉFONO / WHATSAPP</span>
+          <span class="contact-value">+54 261 716-5001</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/facundo-verdugo-378076216/" target="_blank" class="contact-box">
+          <span class="contact-title">PERFIL DE LINKEDIN</span>
+          <span class="contact-value">linkedin.com/in/facundo-verdugo</span>
+        </a>
+
+        <a href="https://github.com/goretox" target="_blank" class="contact-box">
+          <span class="contact-title">REPOSITORIOS GITHUB</span>
+          <span class="contact-value">github.com/goretox</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; Facundo Verdugo — Mendoza, Argentina</div>
+    <div>
+      <a href="mailto:facuverdugo@gmail.com">facuverdugo@gmail.com</a> // 
+      <a href="https://wa.me/542617165001" target="_blank">+54 261 716-5001</a> // 
+      <a href="https://www.linkedin.com/in/facundo-verdugo-378076216/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
