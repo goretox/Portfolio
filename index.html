@@ -58,7 +58,9 @@
 
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -90,6 +92,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .pulse {
@@ -193,6 +196,12 @@
       font-size: 0.75rem;
     }
 
+    .tag-highlight {
+      border-color: rgba(6, 182, 212, 0.4);
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
+    }
+
     /* Metric / Stat Cards */
     .stat-card {
       background: var(--card-bg);
@@ -230,6 +239,32 @@
       text-decoration: underline;
     }
 
+    /* Contact Links */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .contact-item:hover {
+      color: var(--accent-cyan);
+    }
+
+    .contact-label {
+      color: var(--accent-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -238,11 +273,17 @@
       justify-content: space-between;
       color: var(--text-muted);
       font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     footer a {
       color: var(--text-main);
       text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent-cyan);
     }
 
     @media (max-width: 600px) {
@@ -263,7 +304,8 @@
       <a href="#especialidad">ESPECIALIDAD</a>
       <a href="#laboratorios">LABS & PROYECTOS</a>
       <a href="#herramientas">STACK</a>
-      <a href="https://www.linkedin.com/in/facundo-verdugo" target="_blank">LINKEDIN</a>
+      <a href="#contacto">CONTACTO</a>
+      <a href="https://www.linkedin.com/in/facundo-verdugo-378076216/" target="_blank">LINKEDIN</a>
       <a href="https://github.com/goretox" target="_blank">GITHUB</a>
     </nav>
   </header>
@@ -272,7 +314,7 @@
   <div class="hero">
     <div class="status-badge">
       <div class="pulse"></div>
-      Disponible para roles en Infraestructura, Cloud & Observabilidad
+      Disponible para roles en Infraestructura, Cloud & Observabilidad | Inglés: B1 / B2
     </div>
     <h1>Construyendo visibilidad y observabilidad en sistemas distribuidos.</h1>
     <p class="hero-subtitle">
@@ -330,56 +372,3 @@
 
       <div class="card">
         <h3>03. Microservicios & Context Propagation (Python)</h3>
-        <p>Implementación de propagación de contexto distribuido W3C (`traceparent`) entre servicios desarrollados en FastAPI/Python para mantener la trazabilidad de punta a punta.</p>
-        <ul class="tag-list">
-          <li class="tag">Python</li>
-          <li class="tag">FastAPI</li>
-          <li class="tag">Context Propagation</li>
-          <li class="tag">OpenTelemetry</li>
-        </ul>
-        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
-      </div>
-
-      <div class="card">
-        <h3>04. CI/CD & Infrastructure Automation</h3>
-        <p>Automatización de flujos de trabajo en GitHub Actions para validación continua de contenedores Docker, pruebas de sintaxis y despliegue automatizado.</p>
-        <ul class="tag-list">
-          <li class="tag">GitHub Actions</li>
-          <li class="tag">CI/CD</li>
-          <li class="tag">Docker</li>
-          <li class="tag">Bash</li>
-        </ul>
-        <a href="https://github.com/goretox" target="_blank" class="repo-link">Ver Repositorio &rarr;</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Stack de Herramientas -->
-  <section id="herramientas">
-    <div class="section-title"><span>03 //</span> HERRAMIENTAS Y TECNOLOGÍAS</div>
-    <div class="card">
-      <ul class="tag-list" style="gap: 0.75rem;">
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">OpenTelemetry</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Elasticsearch</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Docker / Containerization</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Node.js & Express</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Python & FastAPI</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Git / GitHub Actions</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Distributed Tracing</li>
-        <li class="tag" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">SQL / Bases de Datos</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div>&copy; Facundo Verdugo — Mendoza, Argentina</div>
-    <div>
-      <a href="https://www.linkedin.com/in/facundo-verdugo-378076216/" target="_blank">LinkedIn</a> // 
-      <a href="https://github.com/goretox" target="_blank">GitHub</a>
-    </div>
-  </footer>
-
-</body>
-</html>
